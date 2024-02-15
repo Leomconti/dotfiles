@@ -1,0 +1,45 @@
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding set to 12px
+yabai -m config top_padding    12
+yabai -m config bottom_padding 12
+yabai -m config left_padding   12
+yabai -m config right_padding  12
+yabai -m config window_gap     06
+
+# center mouse on window with focus
+# yabai -m config mouse_follows_focus on
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+# Disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^(Karabiner-Elements|Obsidian|iTerm|Discord|Reminders)$" manage=off
+yabai -m rule --add app="^(Finder|Notes|Slack|Mail|Spotify|wireGuard|Keychain Access|Docker Desktop|Digital Color Meter|Logi Options+|Karabiner-EventViewer|Raycast)$" manage=off
+yabai -m rule --add app="^Microsoft Teams|Loom" manage=off
+
+# window opacity (default: off)
+# example: render all unfocused windows with 90% opacity
+
+yabai -m config window_topmost off # Disabled because browser popups will disappear if its enabled
+yabai -m config window_shadow float
+
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+yabai -m config external_bar all:30:0
