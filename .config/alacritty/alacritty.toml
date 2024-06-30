@@ -9,8 +9,8 @@ padding.y = 10
 
 decorations = "Buttonless"
 
-opacity = 0.85
-blur=true
+opacity = 0.95
+blur = false
 
 [font]
 size = 14.0
@@ -31,3 +31,8 @@ style = "Italic"
 family = "Liga SFMono Nerd Font"
 style = "Regular"
 
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
